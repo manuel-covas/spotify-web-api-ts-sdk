@@ -59,11 +59,11 @@ class CurrentUserAlbumsEndpoints extends EndpointsBase {
     }
 
     public async saveAlbums(ids: string[]) {
-        await this.putRequest('me/albums', ids);
+        await this.putRequest('me/albums', { ids });
     }
 
     public async removeSavedAlbums(ids: string[]) {
-        await this.deleteRequest('me/albums', ids);
+        await this.deleteRequest('me/albums', { ids });
     }
 
     public hasSavedAlbums(ids: string[]) {
@@ -79,11 +79,11 @@ class CurrentUserAudiobooksEndpoints extends EndpointsBase {
     }
 
     public async saveAudiobooks(ids: string[]) {
-        await this.putRequest('me/audiobooks', ids);
+        await this.putRequest('me/audiobooks', { ids });
     }
 
     public async removeSavedAudiobooks(ids: string[]) {
-        await this.deleteRequest('me/audiobooks', ids);
+        await this.deleteRequest('me/audiobooks', { ids });
     }
 
     public hasSavedAudiobooks(ids: string[]) {
@@ -99,11 +99,11 @@ class CurrentUserEpisodesEndpoints extends EndpointsBase {
     }
 
     public async saveEpisodes(ids: string[]) {
-        await this.putRequest(`me/episodes`, ids)
+        await this.putRequest(`me/episodes`, { ids })
     }
 
     public async removeSavedEpisodes(ids: string[]) {
-        await this.deleteRequest(`me/episodes`, ids)
+        await this.deleteRequest(`me/episodes`, { ids })
     }
 
     public hasSavedEpisodes(ids: string[]) {
@@ -160,11 +160,11 @@ class CurrentUserTracksEndpoints extends EndpointsBase {
         return this.getRequest<Page<SavedTrack>>(`me/tracks${params}`);
     }
     public async saveTracks(ids: string[]) {
-        await this.putRequest('me/tracks', ids);
+        await this.putRequest('me/tracks', { ids });
     }
 
     public async removeSavedTracks(ids: string[]) {
-        await this.deleteRequest('me/tracks', ids);
+        await this.deleteRequest('me/tracks', { ids });
     }
 
     public hasSavedTracks(ids: string[]) {
